@@ -1,0 +1,162 @@
+<!--
+A TextMate theme (.tmLanguage) for Datalog (in particular, DES)
+Copyright (C) 2013  Mitchell Jones (info@mjwebproductions.com.au)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>dl</string>
+	</array>
+	<key>name</key>
+	<string>Datalog (DES)</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>begin</key>
+			<string>([a-zA-Z][a-zA-Z0-9]*)\((?=(.*\) :-))</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.datalog</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\)</string>
+			<key>name</key>
+			<string>rule.datalog</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(\'.*?\')|([a-z][A-Za-z0-9_]*)</string>
+					<key>name</key>
+					<string>support.constant.datalog</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>([A-Z_][a-zA-Z]*)|(_)</string>
+					<key>name</key>
+					<string>support.variable.datalog</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>([a-zA-Z][a-zA-Z0-9]*)\(</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.datalog</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\)</string>
+			<key>name</key>
+			<string>predicate.datalog</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(\'.*?\')|([a-z][A-Za-z0-9_]*)</string>
+					<key>name</key>
+					<string>support.constant.datalog</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>([A-Z_][a-zA-Z]*)|(_)</string>
+					<key>name</key>
+					<string>support.variable.datalog</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>All comments, start with a %</string>
+			<key>match</key>
+			<string>\%.*</string>
+			<key>name</key>
+			<string>comment.line.percentage.datalog</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>i.e. X is 4</string>
+			<key>match</key>
+			<string>is</string>
+			<key>name</key>
+			<string>keyword.operator.datalog</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>4, 25, 1004</string>
+			<key>match</key>
+			<string>-?\d+(\.(\d+)|(\d+E-?\d+))?</string>
+			<key>name</key>
+			<string>constant.numeric.datalog</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>foo</string>
+			<key>match</key>
+			<string>[a-z][A-Za-z0-9_]*</string>
+			<key>name</key>
+			<string>support.constant.datalog</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>'foo bar', '2*3'</string>
+			<key>match</key>
+			<string>\'.*?\'</string>
+			<key>name</key>
+			<string>string.quoted.single.datalog</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>X, _X, _var, _</string>
+			<key>match</key>
+			<string>([A-Z_][a-zA-Z0-9]*)|(_)</string>
+			<key>name</key>
+			<string>support.variable.datalog</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>e.g. /assert, which is only available in console mode</string>
+			<key>match</key>
+			<string>\/.*</string>
+			<key>name</key>
+			<string>invalid.illegal.datalog</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.datalog</string>
+	<key>uuid</key>
+	<string>65187d18-82d6-407e-9bbc-8f6cbf904a50</string>
+</dict>
+</plist>

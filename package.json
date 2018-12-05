@@ -1,0 +1,26 @@
+{
+    "name": "datalog",
+    "displayName": "Datalog",
+    "description": "",
+    "publisher": "Mikkel Jarlund",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.29.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "datalog",
+            "aliases": ["Datalog", "datalog"],
+            "extensions": [".dl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "datalog",
+            "scopeName": "source.datalog",
+            "path": "./syntaxes/datalog.tmLanguage"
+        }]
+    }
+}
